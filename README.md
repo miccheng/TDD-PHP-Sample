@@ -16,7 +16,7 @@ This is written with PHPUnit ([http://www.phpunit.de](http://www.phpunit.de)).
 
 1. Clone the repo & checkout all branches (step1 - step8)
 
-        $ git://github.com/miccheng/TDD-PHP-Sample.git
+        $ git clone git://github.com/miccheng/TDD-PHP-Sample.git
         $ git pull origin step1
         $ git pull origin step2
         $ git pull origin step3
