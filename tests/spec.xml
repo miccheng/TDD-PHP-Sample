@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	verbose="true"
+	colors="true"
+	printerClass="PHPUnit_Extensions_Story_ResultPrinter_HTML"
+	printerFile="PHPUnit/Extensions/Story/ResultPrinter/HTML.php"
+	stopOnError="false"
+	stopOnFailure="false"
+	stopOnIncomplete="false"
+	stopOnSkipped="false"
+>
+	<testsuites>
+		<testsuite name="Main">
+			<directory suffix="Spec.php">./</directory>
+			<exclude>./coverage-report/</exclude>
+		</testsuite>
+	</testsuites>
+</phpunit>
