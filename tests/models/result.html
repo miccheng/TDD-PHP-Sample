@@ -1,0 +1,674 @@
+PHPUnit 3.6.10 by Sebastian Bergmann.
+
+<html>
+ <head>
+  <style type ="text/css">
+  body { font-family: Andale Mono, monospace; }
+  .header { font-size: large; font-weight: bold; }
+  .scenarioSuccess { color: green; }
+  .scenario { color: black; }
+  .scenarioFailed { color: red; }
+  .scenarioSkipped { color: teal; }
+  .scenarioIncomplete { color: gray; }
+  .scenarioStepsTable { margin-left: 10px; display: none; }
+  .stepName { }
+  </style>
+  <script type="text/javascript">
+  function showHide(nodeId, linkObj)
+  {
+    var subObj = document.getElementById('stepContainer' + nodeId);
+
+    if (linkObj.innerHTML.indexOf('+')>0) {
+      linkObj.innerHTML = linkObj.innerHTML.replace('+','-');
+      subObj.style.display='block';
+      subObj.style.width = '100%';
+    } else {
+      linkObj.innerHTML = linkObj.innerHTML.replace('-','+');
+      subObj.style.display='none';
+    }
+  }
+  </script>
+ </head>
+ <body>
+  <table border="0">
+   <tr>
+    <td>
+     <p class="header">ShoppingCartSpec</p>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('1', this)">[+] Cart has no items</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer1">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Total quantity should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('2', this)">[+] Add first item to cart</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer2">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Total quantity should be 5</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('3', this)">[+] Add second item to cart</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer3">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Add new item array (
+  0 => 2,
+  1 => 'PID-12346',
+  2 => 2.75,
+  3 => 20,
+  4 => 1,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Total quantity should be 6</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 2</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('4', this)">[+] Remove first item from cart</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer4">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Add new item array (
+  0 => 2,
+  1 => 'PID-12346',
+  2 => 2.75,
+  3 => 20,
+  4 => 1,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Remove item PID-12345</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Total quantity should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('5', this)">[+] Update qty of item in cart</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer5">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Update item qty array (
+  0 => 'PID-12345',
+  1 => 2,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Total quantity should be 2</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('6', this)">[+] Update qty of item invalid</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer6">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Update item qty array (
+  0 => 'PID-12345',
+  1 => -20,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error Invalid quantity</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 5</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('7', this)">[+] Add invalid item</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer7">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 2.35,
+  3 => 20,
+  4 => -10,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error Invalid quantity</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('8', this)">[+] Remove invalid item</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer8">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Remove item PID-12345</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error No such cart item</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('9', this)">[+] Update invalid item</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer9">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Update item qty array (
+  0 => 'PID-12345',
+  1 => 2,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error No such cart item</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('10', this)">[+] Calculate total amount</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer10">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 3,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Add new item array (
+  0 => 2,
+  1 => 'PID-12346',
+  2 => 2,
+  3 => 20,
+  4 => 4,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Grand total 23</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 9</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 2</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('11', this)">[+] Product has insufficient stock</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer11">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 3,
+  3 => 2,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error Insufficient stock</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 0</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+   <tr>
+    <td>
+     <p class="scenarioIncomplete" onclick="showHide('12', this)">[+] Update qty of product with insufficient stock</p>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <table border="0" width="100%" class="scenarioIncomplete scenarioStepsTable" id="stepContainer12">
+      <tr>
+       <td width="60">Given</td>
+       <td class="stepName">New cart </td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">When</td>
+       <td class="stepName">Add new item array (
+  0 => 1,
+  1 => 'PID-12345',
+  2 => 3,
+  3 => 20,
+  4 => 5,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Update item qty array (
+  0 => 'PID-12345',
+  1 => 25,
+)</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">Then</td>
+       <td class="stepName">Returns error Insufficient stock</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Total quantity should be 5</td>
+       <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td width="60">and</td>
+       <td class="stepName">Number of products should be 1</td>
+       <td>&nbsp;</td>
+      </tr>
+
+
+     </table>
+    </td>
+   </tr>
+
+
+   <tr>
+    <td>
+     <p style="margin-top: 20px;" id="Summary" onclick="showHide('Summary', this)">[+] Summary:</p>
+     <div style="margin-left: 10px; display:none" id="stepContainerSummary">
+      <table border="0">
+       <tr>
+        <td width="250" class="scenarioSuccess">Successful scenarios:</td>
+        <td class="scenarioSuccessValue">0</td>
+       </tr>
+       <tr>
+        <td class="scenarioFailed">Failed scenarios:</td>
+        <td class="scenarioFailedValue">0</td>
+       </tr>
+       <tr>
+        <td class="scenarioSkipped">Skipped scenarios:</td>
+        <td class="scenarioSkippedValue">0</td>
+       </tr>
+       <tr>
+        <td class="scenarioIncomplete">Incomplete scenarios:</td>
+        <td class="scenarioIncompleteValue">12</td>
+       </tr>
+      </table>
+     </div>
+    </td>
+   </tr>
+  </table>
+ </body>
+</html>
