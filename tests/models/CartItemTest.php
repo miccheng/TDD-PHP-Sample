@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__) . '/../../models/product.php';
+require_once dirname(__FILE__) . '/../../models/cart_item.php';
 
 class CartItemTest extends PHPUnit_Framework_TestCase
 {	
