@@ -1,5 +1,8 @@
 <?php
 require_once 'PHPUnit/Extensions/Story/TestCase.php';
+require_once dirname(__FILE__) . '/../../models/product.php';
+require_once dirname(__FILE__) . '/../../models/cart_item.php';
+require_once dirname(__FILE__) . '/../../models/shopping_cart.php';
 
 class ShoppingCartSpec extends PHPUnit_Extensions_Story_TestCase
 {
@@ -152,28 +155,92 @@ class ShoppingCartSpec extends PHPUnit_Extensions_Story_TestCase
     {
         switch($action)
 		{
+			case "New cart":
+			{
+				$world['cart'] = new ShoppingCart();
+			}
+			break;
             default:
 			{
                 return $this->notImplemented($action);
             }
         }
     }
- 
+
     public function runWhen(&$world, $action, $arguments)
     {
         switch($action)
 		{
+			case 'Add new item':
+			{
+				try
+				{
+					$new_product = new Product($arguments[0], $arguments[1], $arguments[2], $arguments[3]);
+					$new_item = new CartItem($new_product, $arguments[4]);
+					$world['cart']->addItem($new_item);
+				}
+				catch (Exception $ex)
+				{
+					$world['errors'][] = $ex->getMessage();
+				}
+			}
+			break;
+			case 'Remove item':
+			{
+				try
+				{
+					$world['cart']->removeItem($arguments[0]);
+				}
+				catch (Exception $ex)
+				{
+					$world['errors'][] = $ex->getMessage();
+				}
+			}
+			break;
+			case "Update item qty":
+			{
+				try
+				{
+					$world['cart']->updateItemQty($arguments[0], $arguments[1]);
+				}
+				catch (Exception $ex)
+				{
+					$world['errors'][] = $ex->getMessage();
+				}
+			}
+			break;
             default:
 			{
                 return $this->notImplemented($action);
             }
         }
     }
- 
+
     public function runThen(&$world, $action, $arguments)
     {
         switch($action)
 		{
+			case "Grand total":
+			{
+				$this->assertEquals($arguments[0], $world['cart']->grandTotal());
+			}
+			break;
+			case "Total quantity should be":
+			{
+				$this->assertEquals($arguments[0], $world['cart']->totalQty());
+			}
+			break;
+			case "Number of products should be":
+			{
+				$this->assertEquals($arguments[0], $world['cart']->numProducts());
+			}
+			break;
+			case "Returns error":
+			{
+				if (!isset($world['errors'])) $world['errors'] = array();
+				$this->assertTrue(in_array($arguments[0], $world['errors']));
+			}
+			break;
             default:
 			{
                 return $this->notImplemented($action);
