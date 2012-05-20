@@ -1,6 +1,4 @@
 <?php
-class ProductCreationException extends Exception{}
-
 class Product
 {
 	public $id;
@@ -18,10 +16,6 @@ class Product
 	 */
 	public function __construct($id=null, $code=null, $price=0, $stock=0)
 	{
-		if (is_null($id) || is_null($code))
-		{
-			throw new ProductCreationException("Unable to create product");
-		}
 		$this->id = $id;
 		$this->product_code = $code;
 		if ($price > 0)
